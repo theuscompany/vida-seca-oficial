@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajude a Escola</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        header { background-image: url(fundo.jpeg) ; 
+        background-repeat: no-repeat;;
+    background-size: cover;}
+        .logo { border-radius: 50%; width: 100px; height: 100px; }
+        .descricao, .importancia { margin: 20px 0; }
+        .container { display: flex; justify-content: center; align-items: center; }
+        .info { margin-right: 20px; }
+        .botoes { display: flex; flex-wrap: wrap; justify-content: center; margin: 20px; }
+        button { margin: 10px; padding: 10px; }
+        footer {
+            background-color: #0357ac;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-top: 5px solid #47dcf7;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="Logolivro.png" alt="Logo" class="logo">
+    <h1> VIDAS SECAS </h1>
+</header>
+
+<p class="descricao">
+    Vidas Secas é um clássico da literatura brasileira escrito por Graciliano Ramos, publicado em 1938. A obra retrata a vida dura de uma família de retirantes no sertão nordestino, explorando temas como a pobreza, a seca e a luta pela sobrevivência.
+    
+    A história gira em torno da família de Fabiano, um vaqueiro que, junto com sua esposa, Sinhá Vitória, e seus filhos, busca escapar da seca severa que devastou suas terras. Eles vivem em uma realidade marcada pela escassez de recursos e pela opressão social. A narrativa é rica em detalhes e oferece um retrato vívido da luta diária dessas pessoas, mostrando a resiliência e a dignidade diante de tantas adversidades.
+    
+    A estrutura do livro é fragmentada, alternando entre as perspectivas dos diferentes personagens, o que humaniza cada um deles e permite ao leitor compreender suas emoções e conflitos. A figura do cachorro, Baleia, também desempenha um papel importante, simbolizando a lealdade e a vulnerabilidade do ser humano em face das circunstâncias adversas.
+    
+    Graciliano Ramos utiliza uma linguagem simples, mas profunda, cheia de metáforas e simbolismos que refletem a aridez da vida no sertão. O autor critica a indiferença do poder público e a desigualdade social, revelando a luta dos marginalizados por uma vida digna.
+    
+    Vidas Secas não é apenas um retrato do sertão, mas uma obra que toca em questões universais sobre a condição humana, a luta e a esperança. Através da tragédia da família de Fabiano, o leitor é convidado a refletir sobre a resiliência diante do sofrimento e a busca incessante por um futuro melhor..</p>
+
+<div class="container">
+    <div class="info">
+        <img src="o" alt="QR Code" width="100">
+        <p>Pix: CNPJ: 51.503.662/0001-15</p>
+        <button onclick="copyCNPJ()">Copiar CNPJ</button>
+    </div>
+</div>
+
+<p class="importancia">Veja importância de ajudar a escola através da APM. Assim você colabora com os projetos e necessidades da escola</p>
+
+<div class="botoes">
+    <button onclick="location.href='galeria1.html'">Materias eletivas</button>
+    <button onclick="location.href='galeria2.html'">Prêmios méritos/Desempenho </button>
+    <button onclick="location.href='galeria3.html'">Excendete De Papelaris </button>
+    <button onclick="location.href='galeria4.html'">Concertos Emergencias</button>
+    <button onclick="location.href='galeria5.html'">EPI da cozinha</button>
+    <button onclick="location.href='galeria6.html'">Utensílios novos </button>
+</div>
+
+
+<script>
+    function copyCNPJ() {
+        navigator.clipboard.writeText("51.503.662/0001-15");
+        alert("CNPJ copiado!");
+    }
+</script>
+<footer>
+    <p>&copy; 2024 Feito por Matheus Leme e Silva para a escola EE. PROF. ANTONIO GUEDES DE AZEVEDO</p>
+</footer>
+
+</body>
+</html>
