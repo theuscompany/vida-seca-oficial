@@ -8,7 +8,7 @@
         body { 
             font-family: Arial, sans-serif; 
             text-align: center; 
-            background-color: #FFA500; /* Tom laranja */
+            background-color: #e4861b; /* Tom laranja */
         }
         header { 
             background-image: url(fundo.jpeg); 
@@ -16,12 +16,11 @@
             background-size: cover; 
         }
         .logo { 
-            border-radius: 50%; 
-            width: 100px; 
-            height: 100px; 
+            border-radius: 0%; 
+            width: 120px; 
+            height: 120px; 
         }
         .descricao, .importancia {
-
             margin: 20px; 
             padding: 10px; 
             text-align: justify; 
@@ -52,12 +51,35 @@
             margin: 10px; 
             border-radius: 8px; 
         }
+        .botoes p {
+            margin-top: 5px; /* Espaço entre a imagem e o nome */
+            color: #0c0802; /* Tom laranja suave */
+        }
         footer { 
             background-color: #0357ac; 
             color: white; 
             padding: 10px; 
             text-align: center; 
             border-top: 5px solid #47dcf7; 
+        }
+        .quiz-button {
+            font-size: 24px; /* Aumenta o tamanho do texto do botão */
+            padding: 15px 30px; /* Aumenta o tamanho do botão */
+            background-color: #ffb74d; /* Tom laranja suave */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px; /* Espaço acima do botão */
+        }
+        .quiz-button:hover {
+            background-color: #ff9800; /* Tom laranja mais forte ao passar o mouse */
+        }
+        #caquito {
+            position: absolute;
+            bottom: 10px; /* Posiciona na parte inferior */
+            left: 10px; /* Posiciona à esquerda */
+            font-size: 18px; /* Tamanho da fonte do texto */
+            color: #ffb74d; /* Tom laranja suave */
         }
     </style>
 </head>
@@ -81,42 +103,59 @@
     <li><strong>Crítica Social:</strong> A indiferença do poder público e a desigualdade.</li>
 </ul>
 
-
-
 <div class="container">
     <div class="info">
         <img src="familia.png" alt="Família" class="familia">
     </div>
 </div>
 
-
 <h2>Personagens Principais</h2>
+<p>(clique nas imagens para mais informações)</p>
 
 <div class="botoes">
-    <a href="galeria1.html"><img src="fabiano.jpg" alt="Fabiano" /></a>
-    <a href="galeria2.html"><img src="sinha.jfif" alt="Sinhá Vitória" /></a>
-    <a href="galeria3.html"><img src="filho 1.jpg" alt="Filho 1" /></a>
-    <a href="galeria4.html"><img src="baleia.jfif" alt="Baleia" /></a>
-    <a href="galeria5.html"><img src="soladado amarelo.jpeg" alt="Soldado Amarelo" /></a>
-    <a href="galeria6.html"><img src="patrao.jpeg" alt="Patrão" /></a>
+    <div class="personagem">
+        <a href="galeria1.html"><img src="fabiano.jpg" alt="Fabiano" /></a>
+        <p>Fabiano</p>
+    </div>
+    <div class="personagem">
+        <a href="galeria2.html"><img src="sinha.jfif" alt="Sinhá Vitória" /></a>
+        <p>Sinhá Vitória</p>
+    </div>
+    <div class="personagem">
+        <a href="galeria3.html"><img src="filho 1.jpg" alt="Filho 1" /></a>
+        <p>Filhos</p>
+    </div>
+    <div class="personagem">
+        <a href="galeria4.html"><img src="baleia.jfif" alt="Baleia" /></a>
+        <p>Baleia</p>
+    </div>
+    <div class="personagem">
+        <a href="galeria5.html"><img src="soladado amarelo.jpeg" alt="Soldado Amarelo" /></a>
+        <p>Soldado Amarelo</p>
+    </div>
+    <div class="personagem">
+        <a href="galeria6.html"><img src="patrao.jpeg" alt="Patrão" /></a>
+        <p>Patrão</p>
+    </div>
 </div>
+
 <h2>História</h2>
 <p class="descricao">
-    "Vidas Secas" narra a história de Fabiano, um vaqueiro que vive com sua família no sertão nordestino do Brasil. A obra começa com a descrição da seca severa que afeta a região, forçando Fabiano, sua esposa Sinhá Vitória, e seus filhos a deixarem sua terra em busca de melhores condições de vida. 
+    Vidas Secas narra a história de Fabiano, um vaqueiro que vive com sua família no sertão nordestino do Brasil. A obra começa com a descrição da seca severa que afeta a região, forçando Fabiano, sua esposa Sinhá Vitória, e seus filhos a deixarem sua terra em busca de melhores condições de vida. 
     A família enfrenta inúmeras dificuldades, incluindo a escassez de alimentos e a opressão de autoridades locais. Fabiano é um personagem que simboliza a luta do homem simples contra as adversidades. Ele é retratado como um trabalhador honesto, mas limitado em sua capacidade de entender e lutar contra as injustiças sociais. 
     Os filhos de Fabiano, principalmente o menino e a menina, têm suas próprias experiências e percepções da vida dura no sertão. O cachorro da família, Baleia, é um importante símbolo de lealdade e vulnerabilidade. A relação deles é um reflexo da luta pela sobrevivência e da dignidade diante das dificuldades. 
     À medida que a história avança, a família se depara com a indiferença do governo e a luta contínua contra a miséria. A narrativa é fragmentada, alternando entre as perspectivas dos personagens, o que permite uma compreensão mais profunda de suas emoções e desafios. 
     O desfecho da história é trágico, com a família continuando a enfrentar a seca e a opressão. A obra termina com uma sensação de desamparo, mas também de resiliência, convidando o leitor a refletir sobre a condição humana e a luta incessante por um futuro melhor. "Vidas Secas" é uma crítica poderosa à desigualdade social e à luta pela sobrevivência em condições adversas.
 </p>
+
+<h2>QUIZ</h2>
+
 <div class="botoes">
-    <button onclick="location.href='quiz.html'">Materias eletivas</button>
+    <button class="quiz-button" onclick="location.href='quiz.html'"> CLIQUE AQUI </button>
 </div>
-<script>
-    function copyCNPJ() {
-        navigator.clipboard.writeText("51.503.662/0001-15");
-        alert("CNPJ copiado!");
-    }
-</script>
+
+<div id="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.designi.com.br%2Fa2c873b00be08e1a&psig=AOvVaw2j3zztdoy_XPKpaEcyPJi2&ust=1728194543468000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLjlssfI9ogDFQAAAAAdAAAAABAE">Caquito</div>
+
 <footer>
     <p>&copy; 2024 Feito por Matheus Leme e Silva para a escola EE. PROF. ANTONIO GUEDES DE AZEVEDO</p>
 </footer>

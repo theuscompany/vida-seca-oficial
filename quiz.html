@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Vidas Secas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        #quiz {
+            text-align: center; /* Centraliza o texto */
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        .personagem {
+            display: inline-block;
+            margin: 10px;
+        }
+        .personagem img {
+            width: 100px;
+            height: auto;
+            border-radius: 50%;
+        }
+        #errorMsg {
+            color: red;
+            font-size: 24px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            z-index: 10;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        #answers {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        #question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Seção do Quiz -->
+<section id="quiz">
+    <h2>Quiz sobre Vidas Secas</h2>
+    <div id="question"></div>
+    <div id="answers"></div>
+    <button class="button" id="nextBtn" style="display:none;">Próxima Pergunta</button>
+    <button class="button" id="backBtn" style="display:none;" onclick="goBack()">Reiniciar Quiz</button>
+
+    <!-- Botão para voltar ao index.html -->
+    <a href="index.html">
+        <button class="button">Voltar</button>
+    </a>
+</section>
+
+<!-- Mensagem de erro -->
+<div id="errorMsg">Resposta Incorreta!</div>
+
+<script>
+    const questions = [
+        {
+            question: "Quem é o protagonista de Vidas Secas?",
+            answers: ["Fabiano", "Zé Leite", "Rafael", "Dona Maria"],
+            correct: 0
+        },
+        {
+            question: "Qual é o nome da esposa de Fabiano?",
+            answers: ["Sinhá Vitória", "Dona Maria", "Maria", "Sinhá Mãe"],
+            correct: 0
+        },
+        {
+            question: "Qual animal é central na história?",
+            answers: ["Cavalo", "Cachorro", "Gato", "Burro"],
+            correct: 1
+        },
+        {
+            question: "Em que ambiente se passa a história?",
+            answers: ["Sertão", "Cidade", "Praia", "Floresta"],
+            correct: 0
+        },
+        {
+            question: "O que Fabiano e sua família enfrentam?",
+            answers: ["Seca", "Fogo", "Guerra", "Fome"],
+            correct: 0
+        },
+        {
+            question: "Qual é o principal tema do livro?",
+            answers: ["Sobrevivência", "Amor", "Amizade", "Esperança"],
+            correct: 0
+        },
+        {
+            question: "Quem ajuda Fabiano a aprender a ler?",
+            answers: ["O padre", "O mestre", "A filha", "O amigo"],
+            correct: 1
+        },
+        {
+            question: "Qual é o sentimento predominante em relação à terra?",
+            answers: ["Desespero", "Amor", "Indiferença", "Esperança"],
+            correct: 0
+        },
+        {
+            question: "Qual o destino final da família?",
+            answers: ["Voltar para a terra natal", "Ficar na cidade", "Migrar para o Sul", "Viver na seca"],
+            correct: 3
+        },
+        {
+            question: "Como é retratada a figura do homem do sertão?",
+            answers: ["Heroica", "Ineficiente", "Irresponsável", "Ridícula"],
+            correct: 0
+        }
+    ];
+    let currentQuestion = 0;
+
+    window.onload = function() {
+        showQuestion();
+    };
+
+    function showQuestion() {
+        document.getElementById('errorMsg').style.display = 'none';
+        const q = questions[currentQuestion];
+        document.getElementById('question').innerText = q.question;
+        const answersDiv = document.getElementById('answers');
+        answersDiv.innerHTML = '';
+        q.answers.forEach((answer, index) => {
+            const button = document.createElement('button');
+            button.innerText = answer;
+            button.style.fontSize = '20px';
+            button.className = 'button';
+            button.onclick = () => checkAnswer(index);
+            answersDiv.appendChild(button);
+        });
+        document.getElementById('nextBtn').style.display = 'none';
+    }
+
+    function checkAnswer(selected) {
+        if (selected === questions[currentQuestion].correct) {
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                document.getElementById('nextBtn').style.display = 'block';
+                showQuestion();
+            } else {
+                alert('Você completou o quiz!');
+                document.getElementById('backBtn').style.display = 'block';
+            }
+        } else {
+            document.getElementById('errorMsg').style.display = 'block';
+        }
+    }
+
+    function goBack() {
+        document.getElementById('quiz').style.display = 'none';
+        document.querySelector('section').style.display = 'block';
+        currentQuestion = 0; // Reinicia o quiz
+        document.getElementById('backBtn').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
